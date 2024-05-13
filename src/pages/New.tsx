@@ -6,8 +6,10 @@ import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { DiaryDispatchContext } from '../App'
 import { EditorState } from '../dataType'
+import usePageTitle from './../hooks/usePageTitle';
 
 const New = () => {
+  usePageTitle("새 일기 쓰기");
   //nav에 -1을 주면 뒤로가기 
   const { onCreate } = useContext(DiaryDispatchContext);
   const nav = useNavigate();

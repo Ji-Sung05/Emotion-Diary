@@ -7,6 +7,7 @@ import { useContext } from 'react';
 import { DiaryDispatchContext } from '../App';
 import useDiary from '../hooks/useDiary';
 import { Data, EditorState } from '../dataType';
+import usePageTitle from './../hooks/usePageTitle';
 
 interface EditProps {
   onSubmit?: (input: Data) => void;
@@ -14,6 +15,7 @@ interface EditProps {
 
 const Edit: React.FC<EditProps> = () => {
   const params = useParams();
+  usePageTitle(`${params.id}번 일기 수정`);
   const nav = useNavigate();
   const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
   const curDiaryItem = useDiary({ id: Number(params.id) || 0 });
