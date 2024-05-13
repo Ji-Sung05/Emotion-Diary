@@ -85,10 +85,12 @@ function App() {
   useEffect(() => {
     const storedData = localStorage.getItem("diary");
     if(!storedData){
+      setIsLoading(false);
       return;
     }
     const parsedData: Data = JSON.parse(storedData);
     if(!Array.isArray(parsedData)) {
+      setIsLoading(false);
       return;
     }
     let maxId = 0;
