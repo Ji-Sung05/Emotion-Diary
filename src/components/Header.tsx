@@ -3,8 +3,8 @@ import './Header.css';
 
 type HeaderProps = {
   title: string;
-  leftChild: React.ReactNode;
-  rightChild: React.ReactNode;
+  leftChild?: React.ReactNode;
+  rightChild?: React.ReactNode;
 }
 
 const Header: React.FC<HeaderProps> = ({title, leftChild, rightChild}) => {
