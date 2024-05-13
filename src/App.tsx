@@ -87,7 +87,10 @@ function App() {
     if(!storedData){
       return;
     }
-    const parsedData = JSON.parse(storedData);
+    const parsedData: Data = JSON.parse(storedData);
+    if(!Array.isArray(parsedData)) {
+      return;
+    }
     let maxId = 0;
     parsedData.forEach((item: Data)=> {
       if(Number(item.id) > maxId){
