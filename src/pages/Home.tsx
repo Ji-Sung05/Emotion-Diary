@@ -6,6 +6,7 @@ import DiaryList from '../components/DiaryList'
 import { Data } from '../dataType'
 import usePageTitle from '../hooks/usePageTitle'
 
+//주어진 기준 날짜와 데이터 배열을 기반으로 해당 월의 데이터를 필터링하여 반환한다.
 const getMonthlyData = (pivotDate: Date, data: Data[]): Data[] => {
   const beginTime = new Date(
     pivotDate.getFullYear(), 
